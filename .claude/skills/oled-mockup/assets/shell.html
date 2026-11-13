@@ -1,0 +1,43 @@
+<title>__TITLE__</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans+Condensed:wght@600;700&display=swap">
+<style>
+__STYLE__
+</style>
+
+<div class="wrap">
+<header class="mast">
+  <div>
+    <p class="eyebrow">__EYEBROW__</p>
+    <h1>__TITLE__</h1>
+  </div>
+  <div class="meta">
+__META__
+  </div>
+</header>
+
+__INTRO__
+
+<div class="toolbar">
+  <span class="lbl">Zoom</span>
+  <div class="seg" id="zoom">
+    <button data-s="2">2&times;</button><button data-s="4" aria-pressed="true">4&times;</button><button data-s="6">6&times;</button><button data-s="8">8&times;</button>
+  </div>
+  <label class="chk"><input type="checkbox" id="pageGrid"> page boundaries (8&nbsp;px)</label>
+  <label class="chk"><input type="checkbox" id="cellGrid"> character cells (6&nbsp;px)</label>
+  <label class="chk"><input type="checkbox" id="pxGrid" checked> pixel grid</label>
+</div>
+
+<div class="sheet" id="sheet"></div>
+
+__FOOTER__
+</div>
+
+<script>
+const FONT = Uint8Array.from([__FONT__]);
+__OLED__
+
+// --- Screens ---------------------------------------------------------------
+__SCREENS__
+
+__RENDER__
+</script>

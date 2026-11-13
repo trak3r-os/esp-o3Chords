@@ -1,0 +1,36 @@
+name: Firmware build
+
+on:
+  push:
+    branches: ["**"]
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Cache PlatformIO
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.platformio
+            ~/.cache/pip
+          key: pio-${{ runner.os }}-${{ hashFiles('platformio.ini') }}
+      - name: Install PlatformIO
+        run: pip install --upgrade platformio
+      - name: Build firmware
+        run: pio run -e esp32s3
+      - name: Build keypad test firmware
+        run: pio run -e esp32s3_keypadtest
+      - name: Upload firmware
+        uses: actions/upload-artifact@v4
+        with:
+          name: o3chords-esp32s3
+          path: |
+            .pio/build/esp32s3/firmware.bin
+            .pio/build/esp32s3/bootloader.bin
+            .pio/build/esp32s3/partitions.bin
