@@ -98,7 +98,12 @@ Pin map, from [`src/config/pins.h`](src/config/pins.h):
 > Power everything from 3.3 V. ESP32-S3 GPIOs are not 5 V tolerant.
 
 A printable enclosure (CadQuery source and STL exports) is in
-[`enclosure/`](enclosure/).
+[`enclosure/`](enclosure/): a base with a USB-C opening, a left lid for the
+joystick and OLED, and a right lid for the keypad.
+
+| Exploded view | Lids, top view |
+|:---:|:---:|
+| ![Enclosure, exploded view](docs/images/enclosure_exploded.png) | ![Enclosure lids](docs/images/enclosure_lids.png) |
 
 ---
 

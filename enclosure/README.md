@@ -10,6 +10,10 @@ A 3D-printable case in three parts, modelled in [CadQuery](https://cadquery.read
 
 The model is [`enclosure.py`](enclosure.py); the STL files are its exports.
 
+| Exploded view | Lids, top view |
+|:---:|:---:|
+| ![Enclosure, exploded view](../docs/images/enclosure_exploded.png) | ![Enclosure lids](../docs/images/enclosure_lids.png) |
+
 ## Regenerate or preview
 
 ```bash
@@ -18,6 +22,7 @@ python3 enclosure/enclosure.py --part all --format stl      # writes enclosure/s
 python3 enclosure/enclosure.py --part lid_left --format step
 python3 enclosure/enclosure.py --part all --viewer          # needs OCP CAD Viewer
 python3 enclosure/enclosure.py --part all --viewer --watch  # re-run on save
+python3 enclosure/tools/render_stl.py                       # refresh the README renders (matplotlib)
 ```
 
 ## OLED mount
